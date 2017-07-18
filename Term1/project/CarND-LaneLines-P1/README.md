@@ -11,7 +11,6 @@ Contents
 - `pipeline/` : images for showing each step of pipeline
 - `shortcoming/` : images for shortcoming of pipeline
 - `test_images/` : test images
-- `test_images_output/` : images with lane lines
+- `test_images_output/` : test images with lane lines
 - `test_videos/` : test videos
-- `test_videos_output/ : videos with lane lines
-
+- `test_videos_output/` : test videos with lane lines
