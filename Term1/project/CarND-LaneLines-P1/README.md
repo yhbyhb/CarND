@@ -14,3 +14,6 @@ Contents
 - `test_images_output/` : test images with lane lines
 - `test_videos/` : test videos
 - `test_videos_output/` : test videos with lane lines
+
+## Running Codes 
+Need to using [Git LFS](https://git-lfs.github.com) to download all video files(*.mp4)
