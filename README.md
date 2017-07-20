@@ -1,5 +1,8 @@
 # nd103
-This repo is for my work of udacity Self-Driving Car Nanodegree Program
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
+This repo is for my work of Udacity Self-Driving Car Nanodegree Program
+
 
 ## Term 1. Computer Vision and Deep Learning
 ### Projects
