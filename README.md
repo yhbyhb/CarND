@@ -7,3 +7,4 @@ This repo is for my work of Udacity Self-Driving Car Nanodegree Program
 ## Term 1. Computer Vision and Deep Learning
 ### Projects
 - Project 1: [Finding Lane Lines](Term1/project/CarND-LaneLines-P1)
+- Project 2: [Traffic Sign Classifier](Term1/project/CarND-Traffic-Sign-Classifier-Project)

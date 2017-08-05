@@ -4,7 +4,7 @@
 Contents
 ---
 
-- `P1.ipynb.html` : project code
+- `P1.ipynb` : project code
 - `writeup.md` : a brief write up explaining my work
 - `README.md` : this file
 - `examples/` : examples
