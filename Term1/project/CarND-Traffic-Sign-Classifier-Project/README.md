@@ -11,3 +11,4 @@ Contents
 - `signnames.csv` : includes signs label and names
 - `visualize_cnn.png` : image file for optional step
 - `examples/` : examples
+- `writeup_images/` : images for `writeup.md`
