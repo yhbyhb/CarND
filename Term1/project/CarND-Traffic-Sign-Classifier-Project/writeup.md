@@ -188,4 +188,4 @@ Although the third image which has wrong prediction, but model predicted as seco
 
 Due to the data imbalance, the model may predict worse on smaller number classes. 
 Adding dropout layers after fully connected layers gave huge performance improvement. Data augmentation also helped on model performance. 
-For further improvement, I think that it needs more complicated layer and higher resolution images. 32 x 32 is hard to classify even with bare eyes on some difficult cases.
+For further improvement, I think that it needs more complicated layer and higher resolution images. AlexNet that I referred to is quite good model, but as I mentioned above, More advanced and recent architectures will be helpful. 32 x 32 is hard to classify even with bare eyes on some difficult cases.
