@@ -6,7 +6,7 @@ by Hanbyul Yang, Aug 9, 2017
 This is a project of Self-Driving Car Nanodegree Program of Udacity.
 
 In this project I will classify traffic signs in given images.
-For the codes, Check [`Traffic_Sign_Classifier.ipynb`](Term1/project/CarND-Traffic-Sign-Classifier-Project/Traffic_Sign_Classifier.ipynb).
+For the codes, Check [`Traffic_Sign_Classifier.ipynb`](./Traffic_Sign_Classifier.ipynb).
 
 [//]: # (Image References)
 
