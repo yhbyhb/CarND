@@ -174,7 +174,7 @@ Here are the results of the prediction:
 
 The model was able to correctly guess 5 of the 6 traffic signs, which gives an accuracy of 83.33%. This result is lower than the accuracy on the test set of 0.96, but the result is from only 6 images so I think it is reasonable.
 
-#### Softmax probabilities for each prediction
+### Softmax probabilities for each prediction
 
 The code for making predictions on my final model is located in the 24th cell of the Ipython notebook.
 
@@ -188,4 +188,4 @@ Although the third image which has wrong prediction, but model predicted as seco
 
 Due to the data imbalance, the model may predict worse on smaller number classes. 
 Adding dropout layers after fully connected layers gave huge performance improvement. Data augmentation also helped on model performance. 
-For further improvement, I think that it needs more complicated layer and more high resolution data. 32 x 32 is hard to classify even with bare eyes on some difficult cases.
+For further improvement, I think that it needs more complicated layer and higher resolution images. 32 x 32 is hard to classify even with bare eyes on some difficult cases.
