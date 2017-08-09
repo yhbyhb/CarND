@@ -184,5 +184,8 @@ Following is bar charts of softmax probabilities for each prediction.
 
 Although the third image which has wrong prediction, but model predicted as second highest probability. So, my final model has 100% accuracy in top-5 manner.
 
+## Reflections
 
-
+Due to the data imbalance, the model may predict worse on smaller number classes. 
+Adding dropout layers after fully connected layers gave huge performance improvement. Data augmentation also helped on model performance. 
+For further improvement, I think that it needs more complicated layer and more high resolution data. 32 x 32 is hard to classify even with bare eyes on some difficult cases.
