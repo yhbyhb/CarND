@@ -4,3 +4,6 @@
 [submodule "Term1/project/CarND-Advanced-Lane-Lines"]
 	path = Term1/project/CarND-Advanced-Lane-Lines
 	url = https://github.com/yhbyhb/CarND-Advanced-Lane-Lines.git
+[submodule "Term1/project/CarND-Vehicle-Detection"]
+	path = Term1/project/CarND-Vehicle-Detection
+	url = https://github.com/yhbyhb/CarND-Vehicle-Detection.git

@@ -10,3 +10,4 @@ This repo is for my work of Udacity Self-Driving Car Nanodegree Program
 - Project 2: [Traffic Sign Classifier](Term1/project/CarND-Traffic-Sign-Classifier-Project)
 - Project 3: [Behavior Cloning](https://github.com/yhbyhb/CarND-Behavioral-Cloning-P3/)
 - Project 4: [Advanced Lane Finding](https://github.com/yhbyhb/CarND-Advanced-Lane-Lines)
+- Project 5: [Vehicle Detection](https://github.com/yhbyhb/CarND-Vehicle-Detection)
