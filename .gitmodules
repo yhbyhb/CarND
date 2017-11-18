@@ -7,3 +7,6 @@
 [submodule "Term1/project/CarND-Vehicle-Detection"]
 	path = Term1/project/CarND-Vehicle-Detection
 	url = https://github.com/yhbyhb/CarND-Vehicle-Detection.git
+[submodule "Term2/project/CarND-Extended-Kalman-Filter-Project"]
+	path = Term2/project/CarND-Extended-Kalman-Filter-Project
+	url = https://github.com/yhbyhb/CarND-Extended-Kalman-Filter-Project.git
