@@ -10,3 +10,6 @@
 [submodule "Term2/project/CarND-Extended-Kalman-Filter-Project"]
 	path = Term2/project/CarND-Extended-Kalman-Filter-Project
 	url = https://github.com/yhbyhb/CarND-Extended-Kalman-Filter-Project.git
+[submodule "Term2/project/CarND-Unscented-Kalman-Filter-Project"]
+	path = Term2/project/CarND-Unscented-Kalman-Filter-Project
+	url = https://github.com/yhbyhb/CarND-Unscented-Kalman-Filter-Project.git
