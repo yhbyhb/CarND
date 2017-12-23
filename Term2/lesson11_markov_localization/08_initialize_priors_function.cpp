@@ -1,7 +1,6 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include <map>
 
 using namespace std;
 
@@ -34,33 +33,22 @@ int main() {
 
 };
 
-//TODO: Complete the initialize_priors function
 std::vector<float> initialize_priors(int map_size, std::vector<float> landmark_positions,
                                      float control_stdev) {
-
+    
 //initialize priors assumimg vehicle at landmark +/- 1.0 meters position stdev
 
-    //YOUR CODE HERE
-    std::map<int, float> probs;
-    for (const auto& pos : landmark_positions)
-    {
-        for (int i = -control_stdev; i <= control_stdev; ++i)
-        {
-           probs.insert(std::pair<int, float>(pos - i, 1));
-        }
-    }
+    //set all priors to 0.0
+    std::vector<float> priors(map_size, 0.0);
 
-    int length = probs.size();
+    //set each landmark positon +/1 to 1.0/9.0 (9 possible postions)
+    float normalization_term = landmark_positions.size() * (control_stdev * 2 + 1);
+    for (unsigned int i = 0; i < landmark_positions.size(); i++){
+        int landmark_center = landmark_positions[i];
+        priors[landmark_center] = 1.0f/normalization_term;
+        priors[landmark_center - 1] = 1.0f/normalization_term;
+        priors[landmark_center + 1] = 1.0f/normalization_term;
 
-    std::vector<float> priors;
-    for (int i = 0; i < map_size; ++i)
-    {
-        priors.push_back((float)0);
-    }
-
-    for( const auto& loc_prob : probs )
-    {
-        priors[loc_prob.first] = loc_prob.second / length;
     }
     return priors;
 }
