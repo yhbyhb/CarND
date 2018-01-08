@@ -16,3 +16,6 @@
 [submodule "Term2/project/CarND-Kidnapped-Vehicle-Project"]
 	path = Term2/project/CarND-Kidnapped-Vehicle-Project
 	url = https://github.com/yhbyhb/CarND-Kidnapped-Vehicle-Project.git
+[submodule "Term2/project/CarND-PID-Control-Project"]
+	path = Term2/project/CarND-PID-Control-Project
+	url = https://github.com/yhbyhb/CarND-PID-Control-Project.git
