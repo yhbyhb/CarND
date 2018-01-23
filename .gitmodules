@@ -19,3 +19,6 @@
 [submodule "Term2/project/CarND-PID-Control-Project"]
 	path = Term2/project/CarND-PID-Control-Project
 	url = https://github.com/yhbyhb/CarND-PID-Control-Project.git
+[submodule "Term2/lesson19_model_predictive_control/CarND-MPC-Quizzes"]
+	path = Term2/lesson19_model_predictive_control/CarND-MPC-Quizzes
+	url = https://github.com/yhbyhb/CarND-MPC-Quizzes.git
