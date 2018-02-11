@@ -48,8 +48,9 @@ def search(grid,init,goal,cost,heuristic):
     x = init[0]
     y = init[1]
     g = 0
-    h = g + heuristic[x][y]
-    open_list = [[h, g, x, y]]
+    h = heuristic[x][y]
+    f = g + h
+    open_list = [[f, g, h, x, y]]
 
     # print('initial open list:')
     # for open_item in open_list:
@@ -68,11 +69,9 @@ def search(grid,init,goal,cost,heuristic):
             open_list.sort()
             open_list.reverse()
             next_item = open_list.pop()
-            x = next_item[2]
-            y = next_item[3]
+            x = next_item[3]
+            y = next_item[4]
             g = next_item[1]
-            h = next_item[0]
-
             expand[x][y] = count
             count += 1
             
@@ -85,10 +84,11 @@ def search(grid,init,goal,cost,heuristic):
                     if x2 >= 0 and x2 < len(grid) and y2 >=0 and y2 < len(grid[0]):
                         if closed[x2][y2] == 0 and grid[x2][y2] == 0:
                             g2 = g + cost
-                            h2 = heuristic[x2][y2] + g2
-                            open_list.append([h2, g2, x2, y2])
+                            h2 = heuristic[x2][y2]
+                            f2 = h2 + g2
+                            open_list.append([f2, g2, h2, x2, y2])
                             # print('append list item')
-                            # print([h2, g2, x2, y2])
+                            # print([f2, g2, h2, x2, y2])
                             closed[x2][y2] = 1
             # print('new open list:')
             # for open_item in open_list:
