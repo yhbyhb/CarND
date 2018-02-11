@@ -73,4 +73,6 @@ def search(grid,init,goal,cost):
                             closed[x2][y2] = 1
     return expand
 
-print(search(grid,init,goal,cost))
+expand = search(grid,init,goal,cost)
+for row in expand:
+    print(row)

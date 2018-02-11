@@ -97,3 +97,4 @@ def search(grid,init,goal,cost):
             # print('----')
     
     return result
+print(search(grid,init,goal,cost))
