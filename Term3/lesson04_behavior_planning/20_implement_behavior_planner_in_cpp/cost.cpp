@@ -5,24 +5,14 @@
 #include <map>
 #include <math.h>
 
-
-//TODO: change weights for cost functions.
-const float REACH_GOAL = 10;
-const float EFFICIENCY = 1;
-
-/*
-Here we have provided two possible suggestions for cost functions, but feel free to use your own!
-The weighted cost over all cost functions is computed in calculate_cost. The data from get_helper_data
-will be very useful in your implementation of the cost functions below. Please see get_helper_data
-for details on how the helper data is computed. 
-*/
+const float REACH_GOAL = pow(10, 6);
+const float EFFICIENCY = pow(10, 5);
 
 
 float goal_distance_cost(const Vehicle & vehicle, const vector<Vehicle> & trajectory, const map<int, vector<Vehicle>> & predictions, map<string, float> & data) {
     /*
     Cost increases based on distance of intended lane (for planning a lane change) and final lane of trajectory.
-    Cost of being out of goal lane also becomes larger as vehicle approaches goal distance. This function is
-    very similar to what you have already implemented in the "Implement a Cost Function in C++" quiz.
+    Cost of being out of goal lane also becomes larger as vehicle approaches goal distance.
     */
     float cost;
     float distance = data["distance_to_goal"];
@@ -37,11 +27,9 @@ float goal_distance_cost(const Vehicle & vehicle, const vector<Vehicle> & trajec
 float inefficiency_cost(const Vehicle & vehicle, const vector<Vehicle> & trajectory, const map<int, vector<Vehicle>> & predictions, map<string, float> & data) {
     /*
     Cost becomes higher for trajectories with intended lane and final lane that have traffic slower than vehicle's target speed. 
-    You can use the lane_speed(const map<int, vector<Vehicle>> & predictions, int lane) function to determine the speed
-    for a lane. This function is very similar to what you have already implemented in the "Implement a Second Cost Function in C++" quiz.
     */
+
     float proposed_speed_intended = lane_speed(predictions, data["intended_lane"]);
-    //If no vehicle is in the proposed lane, we can travel at target speed.
     if (proposed_speed_intended < 0) {
         proposed_speed_intended = vehicle.target_speed;
     }
@@ -95,9 +83,9 @@ float calculate_cost(const Vehicle & vehicle, const map<int, vector<Vehicle>> & 
 map<string, float> get_helper_data(const Vehicle & vehicle, const vector<Vehicle> & trajectory, const map<int, vector<Vehicle>> & predictions) {
     /*
     Generate helper data to use in cost functions:
-    indended_lane: +/- 1 from the current lane if the vehicle is planning or executing a lane change.
-    final_lane: The lane of the vehicle at the end of the trajectory. The lane is unchanged for KL and PLCL/PLCR trajectories.
-    distance_to_goal: The s distance of the vehicle to the goal.
+    indended_lane: the current lane +/- 1 if vehicle is planning or executing a lane change.
+    final_lane: the lane of the vehicle at the end of the trajectory.
+    distance_to_goal: the distance of the vehicle to the goal.
 
     Note that indended_lane and final_lane are both included to help differentiate between planning and executing
     a lane change in the cost functions.

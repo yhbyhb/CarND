@@ -15,13 +15,13 @@ using namespace std;
 class Road {
 public:
 
-	int update_width = 70;
+  int update_width = 70;
 
-  	string ego_rep = " *** ";
+    string ego_rep = " *** ";
 
-  	int ego_key = -1;
+    int ego_key = -1;
 
-  	int num_lanes;
+    int num_lanes;
 
     vector<int> lane_speeds;
 
@@ -36,25 +36,25 @@ public:
     int vehicles_added = 0;
 
     /**
-  	* Constructor
-  	*/
-  	Road(int speed_limit, double traffic_density, vector<int> lane_speeds);
+    * Constructor
+    */
+    Road(int speed_limit, double traffic_density, vector<int> lane_speeds);
 
-  	/**
-  	* Destructor
-  	*/
-  	virtual ~Road();
+    /**
+    * Destructor
+    */
+    virtual ~Road();
 
-  	Vehicle get_ego();
+    Vehicle get_ego();
 
-  	void populate_traffic();
+    void populate_traffic();
 
-  	void advance();
+    void advance();
 
-  	void display(int timestep);
+    void display(int timestep);
 
-  	void add_ego(int lane_num, int s, vector<int> config_data);
+    void add_ego(int lane_num, int s, vector<int> config_data);
 
-  	void cull();
+    void cull();
 
 };

@@ -29,57 +29,35 @@ Vehicle::~Vehicle() {}
 
 vector<Vehicle> Vehicle::choose_next_state(map<int, vector<Vehicle>> predictions) {
     /*
-    
-    ***Here you can implement the transition_function code from the Behavior Planning Pseudocode
-    classroom concept.***
-    
-    INPUT: A predictions map. This is a map using vehicle id as keys with predicted
-        vehicle trajectories as values. A trajectory is a vector of Vehicle objects. The first
-        item in the trajectory represents the vehicle at the current timestep. The second item in
-        the trajectory represents the vehicle one timestep in the future.
-    OUTPUT: The the best (lowest cost) trajectory for the ego vehicle corresponding to the next ego vehicle state.
+    Here you can implement the transition_function code from the Behavior Planning Pseudocode
+    classroom concept. Your goal will be to return the best (lowest cost) trajectory corresponding
+    to the next state.
 
-    Functions that will be useful:
-    1. successor_states() - Uses the current state to return a vector of possible successor states for the finite 
-       state machine.
-    2. generate_trajectory(string state, map<int, vector<Vehicle>> predictions) - Returns a vector of Vehicle objects 
-       representing a vehicle trajectory, given a state and predictions. Note that trajectory vectors 
-       might have size 0 if no possible trajectory exists for the state. 
-    3. calculate_cost(Vehicle vehicle, map<int, vector<Vehicle>> predictions, vector<Vehicle> trajectory) - Included from 
-       cost.cpp, computes the cost for a trajectory.
+    INPUT: A predictions map. This is a map of vehicle id keys with predicted
+        vehicle trajectories as values. Trajectories are a vector of Vehicle objects representing
+        the vehicle at the current timestep and one timestep in the future.
+    OUTPUT: The the best (lowest cost) trajectory corresponding to the next ego vehicle state.
+
     */
-    
-    //TODO: Your solution here.
-    /auto possible_successor_states = successor_states();
+    vector<string> states = successor_states();
+    float cost;
+    vector<float> costs;
+    vector<string> final_states;
+    vector<vector<Vehicle>> final_trajectories;
 
-    // keep track of the total cost of each state.
-    std::map<float, vector<Vehicle>> costs_trajectory_map;
-    for (auto const& state: possible_successor_states) {
-        // generate a rough idea of what trajectory we would
-        // follow IF we chose this state.
-    
-        auto trajectory = generate_trajectory(state, predictions);
-
+    for (vector<string>::iterator it = states.begin(); it != states.end(); ++it) {
+        vector<Vehicle> trajectory = generate_trajectory(*it, predictions);
         if (trajectory.size() != 0) {
-            //calculate the "cost" associated with that trajectory.
-            float cost_for_state = calculate_cost(*this, predictions, trajectory);
-            costs_trajectory_map.insert(std::pair<float, vector<Vehicle>>(cost_for_state, trajectory));
+            cost = calculate_cost(*this, predictions, trajectory);
+            costs.push_back(cost);
+            final_trajectories.push_back(trajectory);
         }
     }
-    // Find the minimum cost state.
-    vector<Vehicle> best_trajectory;
-    float min_cost = 9999999;
 
-    for (auto const& kv: costs_trajectory_map) {
-        float cost = kv.first;
-        if (cost < min_cost) {
-            min_cost = cost;
-            best_trajectory = kv.second;
-        }
-    }
-    
-    //TODO: Change return value here:
-    return best_trajectory;
+    vector<float>::iterator best_cost = min_element(begin(costs), end(costs));
+    int best_idx = distance(begin(costs), best_cost);
+    std::cout << best_idx;
+    return final_trajectories[best_idx];
 }
 
 vector<string> Vehicle::successor_states() {
