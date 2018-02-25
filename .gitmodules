@@ -25,3 +25,6 @@
 [submodule "Term2/project/CarND-MPC-Project"]
 	path = Term2/project/CarND-MPC-Project
 	url = https://github.com/yhbyhb/CarND-MPC-Project.git
+[submodule "Term3/project/CarND-Path-Planning-Project"]
+	path = Term3/project/CarND-Path-Planning-Project
+	url = https://github.com/yhbyhb/CarND-Path-Planning-Project.git
