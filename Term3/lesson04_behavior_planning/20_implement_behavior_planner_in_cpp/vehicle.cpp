@@ -50,9 +50,36 @@ vector<Vehicle> Vehicle::choose_next_state(map<int, vector<Vehicle>> predictions
     */
     
     //TODO: Your solution here.
+    /auto possible_successor_states = successor_states();
+
+    // keep track of the total cost of each state.
+    std::map<float, vector<Vehicle>> costs_trajectory_map;
+    for (auto const& state: possible_successor_states) {
+        // generate a rough idea of what trajectory we would
+        // follow IF we chose this state.
+    
+        auto trajectory = generate_trajectory(state, predictions);
+
+        if (trajectory.size() != 0) {
+            //calculate the "cost" associated with that trajectory.
+            float cost_for_state = calculate_cost(*this, predictions, trajectory);
+            costs_trajectory_map.insert(std::pair<float, vector<Vehicle>>(cost_for_state, trajectory));
+        }
+    }
+    // Find the minimum cost state.
+    vector<Vehicle> best_trajectory;
+    float min_cost = 9999999;
+
+    for (auto const& kv: costs_trajectory_map) {
+        float cost = kv.first;
+        if (cost < min_cost) {
+            min_cost = cost;
+            best_trajectory = kv.second;
+        }
+    }
     
     //TODO: Change return value here:
-    return generate_trajectory("KL", predictions);
+    return best_trajectory;
 }
 
 vector<string> Vehicle::successor_states() {
@@ -211,7 +238,7 @@ vector<Vehicle> Vehicle::lane_change_trajectory(string state, map<int, vector<Ve
 }
 
 void Vehicle::increment(int dt = 1) {
-	this->s = position_at(dt);
+    this->s = position_at(dt);
 }
 
 float Vehicle::position_at(int t) {
@@ -261,7 +288,7 @@ vector<Vehicle> Vehicle::generate_predictions(int horizon) {
     Generates predictions for non-ego vehicles to be used
     in trajectory generation for the ego vehicle.
     */
-	vector<Vehicle> predictions;
+    vector<Vehicle> predictions;
     for(int i = 0; i < horizon; i++) {
       float next_s = position_at(i);
       float next_v = 0;
@@ -269,7 +296,7 @@ vector<Vehicle> Vehicle::generate_predictions(int horizon) {
         next_v = position_at(i+1) - s;
       }
       predictions.push_back(Vehicle(this->lane, next_s, next_v, 0));
-  	}
+    }
     return predictions;
 
 }

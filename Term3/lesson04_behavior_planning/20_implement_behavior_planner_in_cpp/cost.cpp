@@ -7,8 +7,8 @@
 
 
 //TODO: change weights for cost functions.
-const float REACH_GOAL = 0;
-const float EFFICIENCY = 0;
+const float REACH_GOAL = 10;
+const float EFFICIENCY = 1;
 
 /*
 Here we have provided two possible suggestions for cost functions, but feel free to use your own!
@@ -95,7 +95,7 @@ float calculate_cost(const Vehicle & vehicle, const map<int, vector<Vehicle>> & 
 map<string, float> get_helper_data(const Vehicle & vehicle, const vector<Vehicle> & trajectory, const map<int, vector<Vehicle>> & predictions) {
     /*
     Generate helper data to use in cost functions:
-    indended_lane: +/- 1 from the current lane if the ehicle is planning or executing a lane change.
+    indended_lane: +/- 1 from the current lane if the vehicle is planning or executing a lane change.
     final_lane: The lane of the vehicle at the end of the trajectory. The lane is unchanged for KL and PLCL/PLCR trajectories.
     distance_to_goal: The s distance of the vehicle to the goal.
 
