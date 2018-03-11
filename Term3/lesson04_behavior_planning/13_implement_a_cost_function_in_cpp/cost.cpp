@@ -19,7 +19,7 @@ float goal_distance_cost(int goal_lane, int intended_lane, int final_lane, float
     float delta_d = (goal_lane - final_lane) + (goal_lane - intended_lane);
     float delta_s = distance_to_goal;
 
-    cost = 1 - exp(fabs(delta_d) / delta_s);
+    cost = 1 - exp(-fabs(delta_d) / delta_s);
     
     return cost;
 }
