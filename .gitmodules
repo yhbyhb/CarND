@@ -28,3 +28,6 @@
 [submodule "Term3/project/CarND-Path-Planning-Project"]
 	path = Term3/project/CarND-Path-Planning-Project
 	url = https://github.com/yhbyhb/CarND-Path-Planning-Project.git
+[submodule "Term3/lesson10_scene_understanding/11_object_detection_lab/CarND-Object-Detection-Lab"]
+	path = Term3/lesson10_scene_understanding/11_object_detection_lab/CarND-Object-Detection-Lab
+	url = https://github.com/yhbyhb/CarND-Object-Detection-Lab.git
