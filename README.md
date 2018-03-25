@@ -23,3 +23,4 @@ This repo is for my work of Udacity Self-Driving Car Nanodegree Program
 ## Term3. Path Planning, Concentrations, and Systems
 ### Projects
 - Project 1: [Path Planning Project](https://github.com/yhbyhb/CarND-Path-Planning-Project)
+- Proejct 2: [Semantic Segmentation](https://github.com/yhbyhb/CarND-Semantic-Segmentation)
