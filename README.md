@@ -3,6 +3,12 @@
 
 This repo is for my work of Udacity Self-Driving Car Nanodegree Program
 
+[//]: # (Image References)
+
+[result]: ./certificate.svg "Certificate"
+
+![alt text][result]
+
 
 ## Term 1. Computer Vision and Deep Learning
 ### Projects
@@ -24,3 +30,4 @@ This repo is for my work of Udacity Self-Driving Car Nanodegree Program
 ### Projects
 - Project 1: [Path Planning Project](https://github.com/yhbyhb/CarND-Path-Planning-Project)
 - Proejct 2: [Semantic Segmentation](https://github.com/yhbyhb/CarND-Semantic-Segmentation)
+- [Capstone project](https://github.com/yhbyhb/CarND-Capstone)
